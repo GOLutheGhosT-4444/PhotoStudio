@@ -64,7 +64,25 @@
         .filter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
         .filter-btn { padding: 10px; border: 1px solid #CBD5E1; background: white; border-radius: 8px; font-weight: 600; font-size: 12px; cursor: pointer; transition: 0.2s; color: var(--text-muted); }
         .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
+.back-arrow-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #475569;
+        border: 4px solid #fff;
+        color: #fff;
+        padding: 10px 15px;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: inset -4px -4px 0px rgba(0,0,0,0.4), inset 4px 4px 0px rgba(255,255,255,0.2), 4px 4px 0px #000;
+        transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .back-arrow-btn:active {
+        transform: translate(4px, 4px);
+        box-shadow: inset -2px -2px 0px rgba(0,0,0,0.4), inset 2px 2px 0px rgba(255,255,255,0.2), 0px 0px 0px #000;
+    }
         /* Smart Button */
         .btn { width: 100%; padding: 16px; color: white; border: none; border-radius: 14px; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; transition: 0.2s; background: var(--primary); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25); }
         .btn:active { transform: scale(0.97); background: var(--primary-hover); }
@@ -76,7 +94,7 @@
     </style>
 </head>
 <body>
-
+<button class="back-arrow-btn" onclick="if(window.AppInventor){window.AppInventor.setWebViewString('Back_to_Arena');}else{console.log('Back_to_Arena');}">⬅</button>
     <div class="header">
         <div style="width:60px;"></div>
         <div class="title">Photo Studio Web</div>
